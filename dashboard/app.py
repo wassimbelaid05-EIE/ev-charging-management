@@ -188,7 +188,7 @@ with tab1:
                 if col_n in hist_df.columns:
                     fig.add_trace(go.Scatter(y=hist_df[col_n].values, mode="lines",
                         line=dict(color=color, width=2), name=name,
-                        fill="tozeroy", fillcolor=color.replace("#","rgba(")+"55)"))
+                        fill="tozeroy", fillcolor=f"rgba({int(color[1:3],16)},{int(color[3:5],16)},{int(color[5:7],16)},0.15)"))
             # Grid limit line
             fig.add_hline(y=150, line_dash="dash", line_color="red", annotation_text="Grid limit 150kW")
             fig.add_hline(y=120, line_dash="dash", line_color="orange", annotation_text="Soft limit 120kW")
